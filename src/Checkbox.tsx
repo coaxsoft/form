@@ -5,11 +5,12 @@ import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrappe
 
 
 export interface Props extends WrapperFormElementProps {
-  className?: string,
+  className?: string;
+  children?: React.ReactNode;
 }
 
-const Input = (props: Props & React.HTMLProps<HTMLInputElement>) => {
-  const { name, className, ...rest } = props;
+const Checkbox = (props: Props & React.HTMLProps<HTMLInputElement>) => {
+  const { name, className } = props;
   const { register, errors } = useFormContext();
 
 
@@ -19,8 +20,12 @@ const Input = (props: Props & React.HTMLProps<HTMLInputElement>) => {
   if (errors[name]) classNames.push("coax-form--el__error");
 
   return (
-    <input className={classNames.join(" ")} name={name} ref={register} {...rest} />
+    <div>
+      <input id={name} className={classNames.join(" ")} name={name} ref={register} type="checkbox" />
+      <label htmlFor={name}>{props.children || null}</label>
+    </div>
+
   );
 };
 
-export default formElementWrapper(Input);
+export default formElementWrapper(Checkbox);

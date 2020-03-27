@@ -7,5 +7,8 @@ export interface FormElementProps {
     horizontal?: boolean;
     name: string;
 }
-declare const formElementWrapper: <P extends object>(Component: React.ComponentType<P>) => (props: FormElementProps) => JSX.Element;
+export interface WrapperFormElementProps {
+    name: string;
+}
+declare const formElementWrapper: <P extends object>(Component: React.ComponentType<P>) => (props: P & FormElementProps) => JSX.Element;
 export default formElementWrapper;

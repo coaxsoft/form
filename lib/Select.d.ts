@@ -1,13 +1,12 @@
-/// <reference types="react" />
-import { FormElementProps } from "./FormElementWrapper";
-export interface Props extends FormElementProps {
-    name: string;
-    className?: string;
-    hasError: boolean;
-    options: Array<string | number | {
-        value: string | number;
-        label: string;
-    }>;
+import * as React from "react";
+import { WrapperFormElementProps } from "./FormElementWrapper";
+interface OptionType {
+    value: string | number;
+    label: React.ReactNode;
 }
-declare const _default: (props: FormElementProps) => JSX.Element;
+export interface Props extends WrapperFormElementProps {
+    className?: string;
+    options: Array<OptionType>;
+}
+declare const _default: (props: Props & React.Props<HTMLSelectElement> & import("./FormElementWrapper").FormElementProps) => JSX.Element;
 export default _default;

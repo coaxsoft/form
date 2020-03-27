@@ -1,40 +1,41 @@
 import * as React from "react"
-import { useFormContext } from "react-hook-form";
+import { useFormContext, Controller } from "react-hook-form";
+import Select from "react-select";
 
-import formElementWrapper, { FormElementProps } from "./FormElementWrapper";
+import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrapper";
 
-
-export interface Props extends FormElementProps {
-  name: string,
-  className?: string,
-  hasError: boolean,
-  options: Array<string | number | { value: string | number; label: string}>
+interface OptionType {
+  value: string | number,
+  label: React.ReactNode
 }
 
-const Select: React.FC<Props> = props => {
-  const { name, className, options, hasError, ...rest } = props;
-  const { register } = useFormContext();
+export interface Props extends WrapperFormElementProps {
+  className?: string,
+  options: Array<OptionType>
+}
 
+const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
+  const { name, className, options, ...rest } = props;
+  const { errors, watch } = useFormContext();
 
   // classNames
   const classNames = ["coax-form--el"];
   if (className) classNames.push(className);
-  if (hasError) classNames.push("coax-form--el__error");
+  if (errors[name]) classNames.push("coax-form--el__error");
+
+  const selectedOption = options.find(o => o.value === watch(name));
 
   return (
-    <select className={classNames.join(" ")} name={name} ref={register} {...rest}>
-      {
-        options.map((item) => {
-          let value = typeof item === "object" ? item.value : item;
-          let label = typeof item === "object" ? item.label : item;
-
-          return (
-            <option key={value} value={value}>{label}</option>
-          )
-        })
-      }
-    </select>
-  )
+    <Controller
+      name={name}
+      as={Select}
+      options={options}
+      onChange={([value]) => value ? value.value : null}
+      valueName="zzz"
+      value={selectedOption}
+      {...rest}
+    />
+  );
 };
 
-export default formElementWrapper(Select);
+export default formElementWrapper(SelectEl);
