@@ -21,16 +21,16 @@ interface RadioElProps {
 const RadioEl = (props: RadioElProps) => {
   const { name, value, register, className } = props;
 
-  const label = <label htmlFor={`${name}:${value}`}>{value}</label>;
+  const label = <label className="coax-form--radio-label" htmlFor={`${name}:${value}`}>{value}</label>;
   const input = (
     <input id={`${name}:${value}`} className={className} type="radio" name={name} ref={register} value={value}/>
   );
 
   return (
-    <>
+    <div className="coax-form--radio-block">
       {input}
       {label}
-    </>
+    </div>
   )
 };
 
@@ -40,9 +40,9 @@ const Radio = (props: Props & React.HTMLProps<HTMLInputElement>) => {
 
 
   // classNames
-  const classNames = ["coax-form--el"];
+  const classNames = ["coax-form--radio-el"];
   if (className) classNames.push(className);
-  if (errors[name]) classNames.push("coax-form--el__error");
+  if (errors[name]) classNames.push("coax-form--radio-el__error");
 
   let content:Array<React.ReactNode> = [];
   if (value) {
@@ -59,7 +59,7 @@ const Radio = (props: Props & React.HTMLProps<HTMLInputElement>) => {
   }
 
   return (
-    <div>
+    <div className="coax-form--radio-wrapper">
       {content}
     </div>
   );

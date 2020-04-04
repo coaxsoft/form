@@ -33,6 +33,7 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
       onChange={([value]) => value ? value.value : null}
       valueName="zzz"
       value={selectedOption}
+      classNamePrefix="coax-form"
       {...rest}
     />
   );

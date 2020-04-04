@@ -1,0 +1,14 @@
+.#{$cf-prefix} {
+  &--checkbox-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &--checkbox-el {
+    height: 32px;
+  }
+
+  &--checkbox-label {
+    margin-left: 8px;
+  }
+}

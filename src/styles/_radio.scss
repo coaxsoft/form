@@ -1,0 +1,19 @@
+.#{$cf-prefix} {
+  &--radio-wrapper {
+    display: flex;
+  }
+
+  &--radio-block {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+  }
+
+  &--radio-el {
+    height: 32px;
+  }
+
+  &--radio-label {
+    margin-left: 4px;
+  }
+}

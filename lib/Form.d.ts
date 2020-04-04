@@ -1,10 +1,15 @@
 import * as React from "react";
-export interface Props {
+export declare type Props = {
     /** Default values of form inputs */
     defaultValues?: object;
     /** validationSchema created by yup */
     validationSchema?: object;
     onSubmit: (values: object) => void;
-}
-declare const Form: React.FC<Props>;
+    children: React.ReactNode;
+};
+export declare type FormHandles = {
+    log(): void;
+    reset(): void;
+};
+declare const Form: React.ForwardRefExoticComponent<Props & React.RefAttributes<FormHandles>>;
 export default Form;

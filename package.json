@@ -11,13 +11,16 @@
     "prepublishOnly": "npm run test && npm run lint",
     "preversion": "npm run test && npm run lint",
     "version": "git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "postbuild": "npm run copy-files",
+    "copy-files": "copyfiles -u 1 \"src/**/*.scss\" lib"
   },
   "author": "Taras Danyliuk",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "copyfiles": "^2.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "typescript": "^3.8.3"

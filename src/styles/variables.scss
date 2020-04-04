@@ -1,0 +1,22 @@
+$cf-prefix: "coax-form";
+
+// General elements
+$cf-border-radius: 4px;
+$cf-border-thickness: 1px;
+$cf-border-style: solid;
+$cf-border-color: #000;
+$cf-border: $cf-border-thickness $cf-border-style $cf-border-color;
+$cf-el-color: #000;
+$cf-el-bg-color: transparent;
+$cf-el-padding: 2px 8px;
+$cf-el-font-size: 16px;
+// TODO add hover/focus/active
+
+
+
+$cf-el-height: 36px;
+// TODO add different sized for different screen sizes
+
+
+// Element wrapper
+$cl-wrapper-padding: 10px 0;

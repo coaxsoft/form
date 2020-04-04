@@ -1,0 +1,23 @@
+.#{$cf-prefix} {
+  &--el-holder {
+    padding: $cl-wrapper-padding;
+    display: flex;
+    flex-direction: column;
+
+    &__horizontal {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &--el-label {
+    display: flex;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+
+    &__horizontal {
+      margin-bottom: 0;
+      margin-right: 8px;
+    }
+  }
+}

@@ -15,14 +15,14 @@ const Checkbox = (props: Props & React.HTMLProps<HTMLInputElement>) => {
 
 
   // classNames
-  const classNames = ["coax-form--el"];
+  const classNames = ["coax-form--checkbox-el"];
   if (className) classNames.push(className);
-  if (errors[name]) classNames.push("coax-form--el__error");
+  if (errors[name]) classNames.push("coax-form--checkbox-el__error");
 
   return (
-    <div>
+    <div className="coax-form--checkbox-wrapper">
       <input id={name} className={classNames.join(" ")} name={name} ref={register} type="checkbox" />
-      <label htmlFor={name}>{props.children || null}</label>
+      <label className="coax-form--checkbox-label" htmlFor={name}>{props.children || null}</label>
     </div>
 
   );

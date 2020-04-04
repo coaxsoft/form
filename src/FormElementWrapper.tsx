@@ -35,6 +35,7 @@ const formElementWrapper = <P extends object>(Component: React.ComponentType<P>)
     // Label className
     const lClassName = ["coax-form--el-label"];
     if (labelClassName) lClassName.push(labelClassName);
+    if (horizontal) lClassName.push("coax-form--el-label__horizontal");
 
     // Error className
     const eClassName = ["coax-form--el-error"];
