@@ -8,7 +8,7 @@ export type Props = {
   defaultValues?: object;
   /** validationSchema created by yup */
   validationSchema?: object;
-  onSubmit: (values: object) => void,
+  onSubmit: (values: object, actions: object) => void,
   children: React.ReactNode
 }
 
@@ -20,7 +20,6 @@ export type FormHandles = {
 
 const Form = forwardRef<FormHandles, Props>((props, ref) => {
   const { defaultValues, validationSchema, onSubmit, children } = props;
-
   const methods = useForm({ defaultValues, validationSchema });
 
   React.useImperativeHandle(ref, () => ({
@@ -28,9 +27,19 @@ const Form = forwardRef<FormHandles, Props>((props, ref) => {
     reset: methods.reset
   }));
 
+  // Methods
+  const onFormSubmit = (values: object) => {
+    const actions = {
+      reset: methods.reset,
+      setValue: methods.setValue,
+      setError: methods.setError
+    };
+    onSubmit(values, actions)
+  };
+
   return (
     <FormContext {...methods}>
-      <form className="coax-form" onSubmit={methods.handleSubmit(onSubmit)}>
+      <form className="coax-form" onSubmit={methods.handleSubmit(onFormSubmit)}>
         {children}
       </form>
     </FormContext>
