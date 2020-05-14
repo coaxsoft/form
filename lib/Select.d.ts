@@ -7,6 +7,7 @@ interface OptionType {
 export interface Props extends WrapperFormElementProps {
     className?: string;
     options: Array<OptionType>;
+    isClearable?: boolean;
 }
 declare const _default: (props: Props & React.Props<HTMLSelectElement> & import("./FormElementWrapper").FormElementProps) => JSX.Element;
 export default _default;

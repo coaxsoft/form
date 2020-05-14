@@ -4,12 +4,12 @@ export declare type Props = {
     defaultValues?: object;
     /** validationSchema created by yup */
     validationSchema?: object;
-    onSubmit: (values: object) => void;
+    onSubmit: (values: object, actions: object) => void;
     children: React.ReactNode;
+    className?: string;
 };
 export declare type FormHandles = {
     log(): void;
     reset(): void;
 };
-declare const Form: React.ForwardRefExoticComponent<Props & React.RefAttributes<FormHandles>>;
-export default Form;
+export declare const Form: React.ForwardRefExoticComponent<Props & React.RefAttributes<FormHandles>>;

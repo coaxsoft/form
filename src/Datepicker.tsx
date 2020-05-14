@@ -3,16 +3,17 @@ import { useFormContext, Controller, EventFunction } from "react-hook-form";
 import DatePicker, { ReactDatePickerProps } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrapper";
+import formElementWrapper from "./FormElementWrapper";
 
 
-export interface Props extends WrapperFormElementProps {
+export interface Props extends Omit<ReactDatePickerProps, "onBlur"| "onChange"| "name">  {
   className?: string;
   onChange?: EventFunction;
   onBlur?: EventFunction;
+  name: string;
 }
 
-const DatepickerEl = (props: Props & ReactDatePickerProps) => {
+const DatepickerEl = (props: Props) => {
   const { name, className, ...rest } = props;
   const { errors } = useFormContext();
 

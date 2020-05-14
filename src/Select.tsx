@@ -11,7 +11,8 @@ interface OptionType {
 
 export interface Props extends WrapperFormElementProps {
   className?: string,
-  options: Array<OptionType>
+  options: Array<OptionType>,
+  isClearable?: boolean,
 }
 
 const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {

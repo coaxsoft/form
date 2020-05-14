@@ -1,4 +1,4 @@
-import Form from "./Form";
+export * from "./Form";
 import FormElementWrapper from "./FormElementWrapper";
 import Input from "./Input";
 import Select from "./Select";
@@ -7,7 +7,6 @@ import Checkbox from "./Checkbox";
 import Datepicker from "./Datepicker";
 
 export {
-  Form,
   FormElementWrapper,
   Input,
   Select,

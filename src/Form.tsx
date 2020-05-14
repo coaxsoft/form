@@ -1,6 +1,5 @@
 import * as React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import {forwardRef} from "react";
 
 
 export type Props = {
@@ -10,6 +9,7 @@ export type Props = {
   validationSchema?: object;
   onSubmit: (values: object, actions: object) => void,
   children: React.ReactNode
+  className?: string
 }
 
 export type FormHandles = {
@@ -18,7 +18,7 @@ export type FormHandles = {
 }
 
 
-const Form = forwardRef<FormHandles, Props>((props, ref) => {
+export const Form = React.forwardRef<FormHandles, Props>((props, ref) => {
   const { defaultValues, validationSchema, onSubmit, children } = props;
   const methods = useForm({ defaultValues, validationSchema });
 
@@ -43,8 +43,5 @@ const Form = forwardRef<FormHandles, Props>((props, ref) => {
         {children}
       </form>
     </FormContext>
-
   )
 });
-
-export default Form;
