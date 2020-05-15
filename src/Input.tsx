@@ -14,7 +14,7 @@ const Input = (props: Props & React.HTMLProps<HTMLInputElement>) => {
 
 
   // classNames
-  const classNames = ["coax-form--el"];
+  const classNames = ["coax-form--el", "coax-form--input"];
   if (className) classNames.push(className);
   if (errors[name]) classNames.push("coax-form--el__error");
 
