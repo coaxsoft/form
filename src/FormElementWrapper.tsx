@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useFormContext } from "react-hook-form";
+import {useState} from "react";
 
 
 export interface FormElementProps {
@@ -18,6 +19,7 @@ export interface WrapperFormElementProps {
 
 
 const formElementWrapper = <P extends object>(Component: React.ComponentType<P>) => {
+
   return (props: P & FormElementProps) => {
     const {
       wrapperClassName, labelClassName, errorClassName,
@@ -49,11 +51,15 @@ const formElementWrapper = <P extends object>(Component: React.ComponentType<P>)
       <div className={wClassName.join(" ")}>
         {
           label && (
-            <span className={lClassName.join(" ")}>{label}</span>
+            <label className={lClassName.join(" ")}>{label}</label>
           )
         }
 
-        <Component {...innerProps as P} name={name}/>
+        <Component
+            {...innerProps as P}
+            name={name}
+            horizontal={horizontal}
+        />
 
         {
           errors[name] && (

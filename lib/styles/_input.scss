@@ -1,5 +1,5 @@
 .#{$cf-prefix} {
-  &--input {
+  &--input__horizontal {
     border: $cf-border-thickness $cf-border-style $cf-color-light-gray;
     border-radius: $cf-input-border-radius;
     outline: none;
@@ -18,7 +18,31 @@
     }
   }
 
-  &--input-error {
+  &--input__horizontal__error {
     border: $cf-border-thickness $cf-border-style $cf-color-red;
+  }
+
+  &--input {
+    border: none;
+    border-bottom: $cf-input-border-thickness $cf-border-style $cf-color-light-gray;
+    border-radius: $cf-input-border-radius;
+    outline: none;
+    font-family: $cf-font-family-formular;
+    font-weight: $cf-font-weight-light;
+    font-size: $cf-el-font-size;
+    line-height: 19px;
+    color: $cf-el-color;
+
+    &::placeholder {
+      color: $cf-color-gray;
+    }
+
+    //&:focus {
+    //  border-bottom: $cf-input-border-thickness $cf-border-style $cf-color-blue;
+    //}
+  }
+
+  &--input__error {
+    border-bottom: $cf-input-border-thickness $cf-border-style $cf-color-red;
   }
 }

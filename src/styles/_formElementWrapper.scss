@@ -14,8 +14,10 @@
     display: flex;
     flex-shrink: 0;
     margin-bottom: 4px;
+    position: absolute;
 
     &__horizontal {
+      position: relative;
       margin-bottom: 0;
       margin-right: 8px;
     }
