@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "dev": "webpack-dev-server",
     "build": "rm -rf ./lib && tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build",
@@ -22,9 +23,20 @@
     "@types/react-dom": "^16.9.5",
     "@types/yup": "^0.28.3",
     "copyfiles": "^2.2.0",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "path": "^0.12.7",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^7.0.4",
     "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
     "yup": "^0.28.5"
   },
   "dependencies": {
