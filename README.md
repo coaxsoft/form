@@ -36,7 +36,7 @@ function App() {
 
   return (
     <Form onSubmit={onSubmit}>
-      <Input name="name" /> {/* register an input */}
+      <Input name="name" />
       
       <Select
         name="gender"
