@@ -7,9 +7,12 @@ export declare type Props = {
     onSubmit: (values: object, actions: object) => void;
     children: React.ReactNode;
     className?: string;
+    serverErrors?: object;
 };
 export declare type FormHandles = {
-    log(): void;
     reset(): void;
+    setValue(name: string, value: any): void;
+    setError(name: string, value: string): void;
+    getValues(): void;
 };
 export declare const Form: React.ForwardRefExoticComponent<Props & React.RefAttributes<FormHandles>>;

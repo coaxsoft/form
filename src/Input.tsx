@@ -23,15 +23,12 @@ const Input = (props: Props & React.HTMLProps<HTMLInputElement>) => {
     if (errors[name]) classNames.push("coax-form--el__error");
 
     return (
-        <div>
-            <input
-                className={classNames.join(" ")}
-                name={name}
-                ref={register}
-                {...rest}
-            />
-        </div>
-
+        <input
+            className={classNames.join(" ")}
+            name={name}
+            ref={register}
+            {...rest}
+        />
     );
 };
 
