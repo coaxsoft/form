@@ -14,7 +14,8 @@
     "version": "git add -A src",
     "postversion": "git push && git push --tags",
     "postbuild": "npm run copy-files",
-    "copy-files": "copyfiles -u 1 \"src/**/*.scss\" lib"
+    "copy-files": "copyfiles -u 1 \"src/**/*.scss\" lib",
+    "deploy-gh": "npx webpack && gh-pages -d dist"
   },
   "author": "Taras Danyliuk",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "@types/yup": "^0.28.3",
     "copyfiles": "^2.2.0",
     "css-loader": "^3.5.3",
+    "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^4.3.0",
     "path": "^0.12.7",
     "react": "^16.13.0",

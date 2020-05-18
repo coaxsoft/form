@@ -3,13 +3,15 @@ import * as ReactDOM from "react-dom";
 
 import "./index.scss";
 
-import { Form, Input } from "../src/index";
+import { Form, FormHandles, Input } from "../src/index";
 
 
 const App = () => {
+    const ref = React.createRef<FormHandles>();
+
     return (
       <div className="flex">
-          <Form onSubmit={console.log}>
+          <Form onSubmit={console.log} ref={ref}>
             <Input name="a"/>
             <Input name="b"/>
 
