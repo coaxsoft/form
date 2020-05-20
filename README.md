@@ -6,6 +6,10 @@ Fully customizable form component.
 - Multiple form Elements
 - Full control of form values and submit process
 - Easy styling / restyling
+- Handle server validation
+- Dynamic fields
+- Validation with Yup
+- Custom form elements
 
 
 ## Install
