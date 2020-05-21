@@ -2,4 +2,4 @@ It would be great to have follow functionality:
 - reset form values [Done]
 - read form values outside of form [Done]
 - set values from outside of form [Done]
-- compare form values and validate it
+- compare form values and validate it [Done]

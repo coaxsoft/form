@@ -1,7 +1,7 @@
 import * as React from "react";
-import {useFormContext} from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
-import formElementWrapper, {WrapperFormElementProps} from "./FormElementWrapper";
+import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrapper";
 
 export interface Props extends WrapperFormElementProps {
     className?: string,
@@ -9,16 +9,14 @@ export interface Props extends WrapperFormElementProps {
 }
 
 const Input = (props: Props & React.HTMLProps<HTMLInputElement>) => {
-    const {name, className, horizontal, ...rest} = props;
-    const {register, errors} = useFormContext();
+    const { name, className, horizontal, ...rest } = props;
+    const { register, errors } = useFormContext();
 
 
     // classNames
-    const classNames = ["coax-form--el"];
+    const classNames = ["coax-form--el coax-form--input"];
     if (className) classNames.push(className);
-    if (horizontal) {
-        classNames.push("coax-form--input__horizontal");
-    } else classNames.push("coax-form--input");
+    if (horizontal) classNames.push("coax-form--input__horizontal");
 
     if (errors[name]) classNames.push("coax-form--el__error");
 

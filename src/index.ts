@@ -1,3 +1,5 @@
+import { useFormContext, Controller } from "react-hook-form";
+
 export * from "./Form";
 import FormElementWrapper from "./FormElementWrapper";
 import Input from "./Input";
@@ -12,5 +14,7 @@ export {
   Select,
   Radio,
   Checkbox,
-  Datepicker
+  Datepicker,
+  useFormContext,
+  Controller
 };
