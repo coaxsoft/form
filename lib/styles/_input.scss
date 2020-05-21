@@ -25,10 +25,6 @@
       border: $cf-border-thickness $cf-border-style $cf-color-light-gray;
       border-radius: $cf-input-border-radius;
       font-weight: $cf-font-weight-light;
-      background: $cf-color-silver;
-      height: auto;
-      padding: 5px;
-      background: $cf-el-bg-color;
       outline: none;
       &::placeholder {
         color: $cf-color-gray;

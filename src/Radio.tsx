@@ -44,13 +44,12 @@ const Radio = (props: Props & React.HTMLProps<HTMLInputElement>) => {
   if (className) classNames.push(className);
   if (errors[name]) classNames.push("coax-form--radio-el__error");
 
-  let content:Array<React.ReactNode> = [];
+  let content: Array<React.ReactNode> = [];
   if (value) {
     content.push(
       <RadioEl key={`r:${value}`} className={classNames.join(" ")} name={name} register={register} value={value}/>
     )
-  }
-  else if (values) {
+  } else if (values) {
     content = values.map(value => {
       return (
         <RadioEl key={`r:${value}`} className={classNames.join(" ")} name={name} register={register} value={value}/>
