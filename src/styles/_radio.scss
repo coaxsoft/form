@@ -7,6 +7,57 @@
     display: flex;
     align-items: center;
     margin-right: 16px;
+
+    /* Hide the browser's default radio button */
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: #2255CE 1px solid;
+    }
+
+    /* On mouse-over, add a grey background color */
+    &:hover input ~ .checkmark {
+      // background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    input:checked ~ .checkmark {
+      background-color: #fff;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .checkmark:after {
+      top: 3px;
+      left: 3px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #2255CE;
+    }
   }
 
   &--radio-el {
@@ -15,5 +66,28 @@
 
   &--radio-label {
     margin-left: 4px;
+    font-family: $cf-font-family-formular;
+    font-size: 18px;
   }
+
+  /* The coax-form--radio-block */
+  .coax-form--radio-block {
+    max-width: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25px;
+    padding-top: 4px;
+    color: #222222;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
 }
+
