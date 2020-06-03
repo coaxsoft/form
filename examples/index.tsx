@@ -16,10 +16,8 @@ const App = () => {
             <Input name="b" label="simple input"/>
             <Select name="c" label="horizontal select" options={[{value: 1, label: "form"}]} horizontal/>
             <div className="div">
-                <Radio name="male" value="male"/>
-                <Radio name="male" value="female"/>
+                <Radio name="gender" values={["male", "female", "other"]}/>
             </div>
-
 
             <button type="submit">Submit</button>
           </Form>
