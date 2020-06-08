@@ -51,13 +51,24 @@ const Radio = (props: Props & React.HTMLProps<HTMLInputElement>) => {
   let content: Array<React.ReactNode> = [];
   if (value) {
     content.push(
-      <RadioEl key={`r:${value}`} className={classNames.join(" ")} name={name} register={register} value={value}/>
+      <RadioEl
+        key={`r:${value}`}
+        className={classNames.join(" ")}
+        name={name}
+        register={register}
+        value={value}
+      />
     )
   } else if (values) {
     content = values.map(value => {
       return (
-        <RadioEl key={`r:${value}`} className={classNames.join(" ")} name={name} register={register}
-                 value={value}/>
+        <RadioEl
+          key={`r:${value}`}
+          className={classNames.join(" ")}
+          name={name}
+          register={register}
+          value={value}
+        />
       )
     })
   }

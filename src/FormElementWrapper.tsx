@@ -56,6 +56,7 @@ const formElementWrapper = <P extends object>(Component: React.ComponentType<P>)
         <Component
           {...innerProps as P}
           name={name}
+          label={label}
           horizontal={horizontal}
         />
 
