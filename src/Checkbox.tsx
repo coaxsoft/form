@@ -7,10 +7,11 @@ import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrappe
 export interface Props extends WrapperFormElementProps {
   className?: string;
   children?: React.ReactNode;
+  label?: string
 }
 
 const Checkbox = (props: Props & React.HTMLProps<HTMLInputElement>) => {
-  const { name, className } = props;
+  const { name, className, label } = props;
   const { register, errors } = useFormContext();
 
 
@@ -21,8 +22,12 @@ const Checkbox = (props: Props & React.HTMLProps<HTMLInputElement>) => {
 
   return (
     <div className="coax-form--checkbox-wrapper">
-      <input id={name} className={classNames.join(" ")} name={name} ref={register} type="checkbox" />
-      <label className="coax-form--checkbox-label" htmlFor={name}>{props.children || null}</label>
+      <label className="coax-form--checkbox-label" htmlFor={name}>
+        {label}
+        <input id={name} className={classNames.join(" ")} name={name} ref={register} type="checkbox"/>
+        <span className="checkmark"/>
+        {props.children || null}
+      </label>
     </div>
 
   );
