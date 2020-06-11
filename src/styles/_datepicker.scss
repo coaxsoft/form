@@ -1,0 +1,134 @@
+.#{$cf-prefix} {
+  .#{$cf-prefix} {
+    &--calendar-presets {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #D8D8D8;
+      margin-right: 13px;
+      padding: 16px;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    &--calendar-preset-row {
+      min-height: 36px;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      color: $cf-datepicker-preset-row-color;
+      border-radius: $cf-datepicker-preset-row-border-radius;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $cf-datepicker-preset-row-hover-bg;
+        color: $cf-datepicker-preset-row-hover-color;
+      }
+    }
+
+    &--calendar-header-icon {
+      width: 20px;
+      margin-top: 16px;
+    }
+  }
+
+
+  .CalendarDay {
+    border-color: transparent;
+    color: $cf-datepicker-day-cell-color;
+
+    &__default:hover {
+      border-color: transparent;
+      background-color: $cf-datepicker-day-cell-hover-bg;
+      color: $cf-datepicker-day-cell-hover-color;
+    }
+
+    &__blocked_out_of_range {
+      color: #cacccd;
+    }
+    &__blocked_out_of_range:hover {
+      background-color: inherit;
+      color: #cacccd;
+    }
+
+    &__selected_span {
+      background: $cf-datepicker-day-cell-range-bg;
+      color: $cf-datepicker-day-cell-range-color;
+    }
+
+    &__selected_span:hover {
+      color: inherit;
+    }
+
+    &__selected {
+      border-radius: $cf-datepicker-day-cell-border-radius;
+      background: $cf-datepicker-day-cell-selected-bg;
+      color: $cf-datepicker-day-cell-selected-color;
+    }
+
+    &__selected_start {
+      border-radius: $cf-datepicker-day-cell-border-radius 0 0 $cf-datepicker-day-cell-border-radius;
+    }
+
+    &__selected_end {
+      border-radius: 0 $cf-datepicker-day-cell-border-radius $cf-datepicker-day-cell-border-radius 0;
+    }
+
+    &__selected:hover {
+      background: $cf-datepicker-day-cell-selected-bg;
+      border-color: transparent;
+    }
+
+    &__hovered_span:hover,
+    &__hovered_span {
+      background: $cf-datepicker-day-cell-range-bg;
+      border-color: transparent;
+      color: $cf-datepicker-day-cell-range-color
+    }
+  }
+
+  .DateInput {
+    &_input {
+      box-sizing: border-box;
+    }
+
+    &_input__focused {
+      border-bottom-width: 1px;
+      border-bottom-color: $cf-datepicker-active-input-border-color;
+    }
+  }
+
+  .DayPickerNavigation {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .DayPicker {
+    &__horizontal > div {
+      display: flex;
+      align-items: stretch;
+    }
+
+    &_weekHeader {
+      top: 55px;
+      color: #8A8A8A;
+    }
+
+    &_weekHeader_ul {
+      font-size: 12px;
+    }
+  }
+
+  .CalendarMonth {
+    &_caption {
+      padding-top: 18px;
+      padding-bottom: 48px;
+    }
+
+    &_table {
+      border-collapse: separate;
+      border-spacing: 0 1px;
+    }
+  }
+}

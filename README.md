@@ -18,19 +18,25 @@ Fully customizable form component.
 ## Dependencies
  - [react-hook-form](https://github.com/react-hook-form/react-hook-form)
  - [react-select](https://github.com/jedwatson/react-select)
- - [react-datepicker](https://github.com/Hacker0x01/react-datepicker)
+ - [react-dates](https://github.com/airbnb/react-dates)
  
 ## Available form elements
  - Input
  - Select
  - Checkbox
  - Radio
- - Datepicker
+ - SingleDatePicker
+ - DateRangePicker
 
 ## Quickstart 
 ```jsx
 import React from "react";
 import { Form, Input, Select, Datepicker, Checkbox } from "@coax/form";
+
+import "@coax/form/styles/variables";
+// You can override default variables by importing modified variables between this two lines
+import "@coax/form/styles/styles/index";
+
 
 function App() {
  
@@ -104,8 +110,17 @@ Other props from [react-select](https://react-select.com/props)
 | value            | Value of radio button                              | string \| number                            | -                |
 | values           | Radio group. Values of radio button                | Array<string \| number>                     | -                |
 
-### Datepicker form element props
-Props from [react-datepicker](https://reactdatepicker.com/)
+### SingleDatePicker form element props
+| Prop             | Description                                        | Type                                        | Default          |
+| ---------------- | -------------------------------------------------- | ------------------------------------------- | ---------------- |
+| presets          | Predefined options for datepicker                  | Array<{ label: string, value: Date }>       | -                |
+Props from [react-dates](https://github.com/airbnb/react-dates)
+
+### DateRangePicker form element props
+| Prop             | Description                                        | Type                                                   | Default          |
+| ---------------- | -------------------------------------------------- | ------------------------------------------------------ | ---------------- |
+| presets          | Predefined options for datepicker                  | Array<{ label: string, start: Date, end: Date }>       | -                |
+Props from [react-dates](https://github.com/airbnb/react-dates)
 
 
 ## Other examples

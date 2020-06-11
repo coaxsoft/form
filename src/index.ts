@@ -6,7 +6,8 @@ import Input from "./Input";
 import Select from "./Select";
 import Radio from "./Radio";
 import Checkbox from "./Checkbox";
-import Datepicker from "./Datepicker";
+import DateRangePicker from "./Datepicker/DateRangePicker";
+import SingleDatePicker from "./Datepicker/SingleDatePicker";
 
 export {
   FormElementWrapper,
@@ -14,7 +15,8 @@ export {
   Select,
   Radio,
   Checkbox,
-  Datepicker,
+  DateRangePicker,
+  SingleDatePicker,
   useFormContext,
   Controller
 };

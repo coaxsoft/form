@@ -1,6 +1,26 @@
 @import "../src/styles/variables";
 @import "../src/styles/index";
 
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.example-row {
+  width: 100%;
+  margin: 25px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .flex {
   display: flex;
   justify-content: center;

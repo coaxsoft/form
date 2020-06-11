@@ -37,3 +37,18 @@ $cf-input-border-thickness: 2px;
 
 // Checkbox
 $cf-checkbox-size: 24px;
+
+// Datepicker
+$cf-datepicker-day-cell-border-radius: 4px;
+$cf-datepicker-day-cell-color: rgba(0, 0, 0, 0.87);
+$cf-datepicker-day-cell-hover-bg: rgba(34,85,206, 0.3);
+$cf-datepicker-day-cell-hover-color: rgba(0, 0, 0, 0.87);
+$cf-datepicker-day-cell-selected-bg: #2255CE;
+$cf-datepicker-day-cell-selected-color: #fff;
+$cf-datepicker-day-cell-range-bg: rgba(34,85,206, 0.2);
+$cf-datepicker-day-cell-range-color: rgba(0, 0, 0, 0.87);
+$cf-datepicker-preset-row-border-radius: $cf-datepicker-day-cell-border-radius;
+$cf-datepicker-preset-row-color: $cf-datepicker-day-cell-color;
+$cf-datepicker-preset-row-hover-bg: $cf-datepicker-day-cell-hover-bg;
+$cf-datepicker-preset-row-hover-color: #2255CE;
+$cf-datepicker-active-input-border-color: #2255CE;
