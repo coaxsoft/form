@@ -9,6 +9,7 @@ $cf-color-light-gray: #D2D2D2;
 $cf-color-gray: #8A8A8A;
 $cf-color-silver: #F6F8F9;
 $cf-color-grey-mercury: #e6e6e6;
+$cf-color-grey-nobel: #A2A2A2;
 
 // General elements
 $cf-font-family-formular: Formular, sans-serif;
@@ -58,8 +59,9 @@ $cf-datepicker-active-input-border-color: #2255CE;
 
 // Select
 
-// component
+// single select
 $cf-select-min-width: 375px;
+$cf-select-max-width: 375px;
 $cf-select-height: 56px;
 $cf-select-border-radius: 2px;
 $cf-select-border-bottom: 2px solid $cf-color-light-gray;
@@ -73,6 +75,11 @@ $cf-select-menu-option-focused: $cf-color-very-light-blue;
 $cf-select-menu-option-selected: $cf-color-dark-blue;
 $cf-select-menu-option-height: 44px;
 $cf-select-menu-option-padding: 12px 16px;
+// multi select
+$cf-select-multi-value-background-color: $cf-color-light-gray;
+$cf-select-multi-value-remove-icon-background-color: $cf-color-grey-nobel;
+$cf-select-multi-container-max-height: 44px;
+
 
 // has value
 

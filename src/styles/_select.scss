@@ -15,6 +15,7 @@
     &__control {
       width: 100%;
       min-width: $cf-select-min-width;
+      max-width: $cf-select-max-width;
       height: $cf-select-height;
       border-radius: $cf-select-border-radius;
       border: none;
@@ -79,6 +80,28 @@
 
     &__value-container {
       padding: 0;
+
+      &--is-multi {
+        max-height: $cf-select-multi-container-max-height;
+        overflow: scroll;
+      }
+    }
+
+    &__multi-value {
+      background-color: $cf-select-multi-value-background-color;
+
+      &__remove {
+
+        svg {
+          background-color: $cf-select-multi-value-remove-icon-background-color;
+          border-radius: 50%;
+        }
+      }
+
+      &__remove:hover {
+        background-color: transparent;
+        color: $cf-border-color;
+      }
     }
   }
 }

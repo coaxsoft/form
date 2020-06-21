@@ -1,13 +1,13 @@
 import * as React from "react"
 import { useFormContext, Controller } from "react-hook-form";
-import Select from "react-select";
-// import Select, { components } from "react-select";
+import Select, { components } from "react-select";
 
 // import GreyArrowDown from "./Icons/GreyArrowDown";
 import ClearXMark from "./Icons/ClearXMark";
 
 import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrapper";
 
+const { ValueContainer, Placeholder } = components;
 
 interface OptionType {
   value: string | number,
@@ -19,6 +19,7 @@ export interface Props extends WrapperFormElementProps {
   options: Array<OptionType>,
   isClearable?: boolean,
   isDisabled?: boolean,
+  isMulti?: boolean,
 }
 
 const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
@@ -68,11 +69,46 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
   //   );
   // };
 
-  // Remove default border from react-select
+  // const CustomValueContainer = ({ children, ...props } : { children: any, props: any }) => {
+  //   return (
+  //     <ValueContainer {...props}>
+  //       <Placeholder {...props} isFocused={props.isFocused}>
+  //         {props.selectProps.placeholder}
+  //       </Placeholder>
+  //       {
+  //         React.Children.map(children, child =>
+  //           child && child.type !== Placeholder ? child : null
+  //         )
+  //       }
+  //     </ValueContainer>
+  //   );
+  // };
+
+
   const style = {
+    // control - remove default border from react-select
     control: (base: any) => ({
       ...base,
       boxShadow: "none"
+    }),
+    // label styles
+    // @ts-ignore
+    container: (provided, state) => ({
+      ...provided,
+      marginTop: 50
+    }),
+    // @ts-ignore
+      valueContainer: (provided, state) => ({
+      ...provided,
+      overflow: "visible"
+    }),
+    // @ts-ignore
+      placeholder: (provided, state) => ({
+      ...provided,
+      position: "absolute",
+      top: state.hasValue || state.selectProps.inputValue ? 5 : "50%",
+      transition: "top 0.1s, font-size 0.1s",
+      fontSize: (state.hasValue || state.selectProps.inputValue) && 13
     })
   };
 
@@ -87,7 +123,16 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
       classNamePrefix="coax-form"
       className={classNames.join(" ")}
       styles={style}
-      components={{ ClearIndicator }}
+      components={{
+        ClearIndicator,
+        // ValueContainer: CustomValueContainer
+      }}
+      textFieldProps={{
+        label: 'Label',
+        InputLabelProps: {
+          shrink: true,
+        },
+      }}
       {...rest}
     />
   );
