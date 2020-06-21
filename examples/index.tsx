@@ -60,7 +60,19 @@ const App = () => {
           horizontal
         />
 
+        <Radio
+          name="single-radio-btn"
+          values={["Yes"]}
+        />
+
+        <Radio
+          name="multi-radio-btn"
+          values={["Yes", "No", "Maybe"]}
+        />
+
         <button type="submit">Submit</button>
+
+        {/*<button type="submit">Submit</button>*/}
       </Form>
     </div>
   )
