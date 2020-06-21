@@ -5,6 +5,11 @@
       &:active {
         border-color: #2456CE;
       }
+
+      &--clear-icon {
+        padding: 0 8px 0 0;
+        display: flex;
+      }
     }
 
     &__control {
@@ -37,7 +42,7 @@
       }
 
       .#{$cf-prefix}__dropdown-indicator {
-        padding: 8px 0 8px 17px;
+        padding: $cf-select-drop-down-arrow-padding;
       }
 
       &--is-focused {
@@ -56,9 +61,12 @@
 
     &__option {
       height: $cf-select-menu-option-height;
-      display: flex;
+      display: block;
       align-items: center;
       padding: $cf-select-menu-option-padding;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       &--is-focused {
         background-color: $cf-select-menu-option-focused;

@@ -101,8 +101,8 @@ export const Form = React.forwardRef<FormHandles, Props>((props, ref) => {
   };
 
 
-  const formClassNames = ["coax-form"]
-  if (className) formClassNames.push(className)
+  const formClassNames = ["coax-form"];
+  if (className) formClassNames.push(className);
 
   return (
     <FormContext {...methods}>

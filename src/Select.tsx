@@ -3,7 +3,8 @@ import { useFormContext, Controller } from "react-hook-form";
 import Select from "react-select";
 // import Select, { components } from "react-select";
 
-// import GreyArrowDownProps from "./Icons/GreyArrowDown";
+// import GreyArrowDown from "./Icons/GreyArrowDown";
+import ClearXMark from "./Icons/ClearXMark";
 
 import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrapper";
 
@@ -31,14 +32,38 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
 
   const selectedOption = options.find(o => o.value === watch(name));
 
+  // TODO: refactor, cause i'm not sure about this interface
+  interface ClearIndicatorProps {
+    children: object;
+    getStyles: (className: string, props: any) => void;
+    innerProps?: any;
+  }
 
-  // TODO: do we need Flow for this? : https://react-select.com/components
+  const ClearIndicator = (props: ClearIndicatorProps) => {
+    const {
+      children = <ClearXMark />,
+      getStyles,
+      innerProps: { ref, ...restInnerProps },
+    } = props;
+    return (
+      <div
+        className="coax-form--select--clear-icon-wrapper"
+        {...restInnerProps}
+        ref={ref}
+        style={getStyles('clearIndicator', props)}
+      >
+        <div className="coax-form--select--clear-icon">{children}</div>
+      </div>
+    );
+  };
+
+  // TODO: seems like we need Flow for this - https://react-select.com/components
   // const DropdownIndicator = (
   //   props: React.ElementConfig<typeof components.DropdownIndicator>
   // ) => {
   //   return (
   //     <components.DropdownIndicator {...props}>
-  //       <GreyArrowDownProps />
+  //       <GreyArrowDown />
   //     </components.DropdownIndicator>
   //   );
   // };
@@ -62,7 +87,7 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
       classNamePrefix="coax-form"
       className={classNames.join(" ")}
       styles={style}
-      // components={{ DropdownIndicator }}
+      components={{ ClearIndicator }}
       {...rest}
     />
   );

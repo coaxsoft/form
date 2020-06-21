@@ -30,12 +30,13 @@ const App = () => {
           aria-label="horizontal select"
           options={
             [
-              {value: 1, label: "1"},
+              {value: 1, label: "nothing but a long text, nothing but a long text, nothing but a long text, nothing but a long text, nothing but a long text "},
               {value: 2, label: "2"},
               {value: 3, label: "3"},
             ]
           }
           horizontal
+          isClearable
         />
         <Select
           name="disabledSelect"
