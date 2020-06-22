@@ -1,6 +1,7 @@
 .#{$cf-prefix} {
   &--radio-wrapper {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &--radio-block {

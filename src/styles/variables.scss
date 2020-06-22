@@ -93,7 +93,7 @@ $cf-disabled-select-background: $cf-color-light-gray;
 // Radio button
 
 // Radio block styles
-$cf-radio-block-margins: 0 45px 0 0;
+$cf-radio-block-margins: 0 45px 10px 0;
 
 // Radio circle styles
 $cf-radio-height: 20px;
@@ -102,3 +102,17 @@ $cf-radio-margins: 0 16px 0 0;
 
 // Radio label styles
 $cf-radio-label-font-size: 18px;
+
+// Checkbox
+
+// Checkbox block styles
+$cf-checkbox-block-margins: 0 45px 10px 0;
+
+// Checkbox circle styles
+$cf-checkbox-height: 20px;
+$cf-checkbox-width: 20px;
+$cf-checkbox-margins: 0 16px 0 0;
+
+// Checkbox label styles
+$cf-checkbox-label-font-size: 18px;
+$cf-checkbox-label-line-height: 18px;

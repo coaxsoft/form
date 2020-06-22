@@ -74,11 +74,18 @@
   }
 
   &--checkbox-el {
-    height: 32px;
+    height: $cf-checkbox-height;
+    width: $cf-checkbox-width;
+    margin: $cf-checkbox-margins;
   }
 
   &--el-label {
     display: none;
+  }
+
+  &--checkbox-label {
+    font-size: $cf-checkbox-label-font-size;
+    line-height: $cf-checkbox-label-line-height;
   }
 
 }
