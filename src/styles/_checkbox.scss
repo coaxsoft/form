@@ -1,14 +1,27 @@
 .#{$cf-prefix} {
 
   /* The container */
+  &--checkbox-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &--checkbox-el {
+    height: $cf-checkbox-height;
+    width: $cf-checkbox-width;
+    margin: $cf-checkbox-margins;
+  }
+
   &--checkbox-label {
-    display: block;
+    display: flex;
+    align-items: center;
     position: relative;
-    padding-left: 35px;
     min-height: $cf-checkbox-size;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: $cf-checkbox-label-font-size;
+    font-weight: $cf-checkbox-label-font-weight;
     color: #222222;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -17,7 +30,7 @@
     font-family: $cf-font-family-formular;
 
     /* Hide the browser's default checkbox */
-     input {
+    input {
       position: absolute;
       opacity: 0;
       cursor: pointer;
@@ -43,7 +56,7 @@
     }
 
     /* When the checkbox is checked, add a blue background */
-     input:checked ~ .checkmark {
+    input:checked ~ .checkmark {
       background-color: #1850D6;
     }
 
@@ -55,12 +68,12 @@
     }
 
     /* Show the checkmark when checked */
-     input:checked ~ .checkmark:after {
+    input:checked ~ .checkmark:after {
       display: block;
     }
 
     /* Style the checkmark/indicator */
-     .checkmark:after {
+    .checkmark:after {
       left: 9px;
       top: 5px;
       width: 5px;
@@ -72,20 +85,4 @@
       transform: rotate(45deg);
     }
   }
-
-  &--checkbox-el {
-    height: $cf-checkbox-height;
-    width: $cf-checkbox-width;
-    margin: $cf-checkbox-margins;
-  }
-
-  &--el-label {
-    display: none;
-  }
-
-  &--checkbox-label {
-    font-size: $cf-checkbox-label-font-size;
-    line-height: $cf-checkbox-label-line-height;
-  }
-
 }

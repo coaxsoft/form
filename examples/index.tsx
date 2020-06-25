@@ -20,10 +20,21 @@ const App = () => {
 
         <Input name="a" horizontal label="horizontal input"/>
         <Input name="b" label="simple input"/>
+
+        <Radio
+          name="single-radio-btn"
+          values={["Yes"]}
+        />
         <Radio name="gender" values={["male", "female", "other"]}/>
-        <Checkbox name="cakes" label="Cakes"/>
-        <Checkbox name="fruits" label="Fruits"/>
-        <SingleDatePicker name="dob" label="Date of birth" presets={[ { label: "abc", value: new Date() }]}/>
+
+        <Checkbox name="cakes" labelText="Cakes"/>
+        <Checkbox name="fruits" labelText="Fruits"/>
+
+        <SingleDatePicker
+          name="dob"
+          label="Date of birth"
+          presets={[ { label: "abc", value: new Date() }]}
+        />
 
         <Select
           name="select"
@@ -60,19 +71,7 @@ const App = () => {
           horizontal
         />
 
-        <Radio
-          name="single-radio-btn"
-          values={["Yes"]}
-        />
-
-        <Radio
-          name="multi-radio-btn"
-          values={["Yes", "No", "Maybe"]}
-        />
-
         <button type="submit">Submit</button>
-
-        {/*<button type="submit">Submit</button>*/}
       </Form>
     </div>
   )

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { useFormContext, Controller } from "react-hook-form";
-import Select, { components } from "react-select";
+import Select, { components, IndicatorProps } from "react-select";
 
-// import GreyArrowDown from "./Icons/GreyArrowDown";
+import GreyArrowDown from "./Icons/GreyArrowDown";
 import ClearXMark from "./Icons/ClearXMark";
 
 import formElementWrapper, { WrapperFormElementProps } from "./FormElementWrapper";
@@ -58,58 +58,16 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
     );
   };
 
-  // TODO: seems like we need Flow for this - https://react-select.com/components
-  // const DropdownIndicator = (
-  //   props: React.ElementConfig<typeof components.DropdownIndicator>
-  // ) => {
-  //   return (
-  //     <components.DropdownIndicator {...props}>
-  //       <GreyArrowDown />
-  //     </components.DropdownIndicator>
-  //   );
-  // };
 
-  // const CustomValueContainer = ({ children, ...props } : { children: any, props: any }) => {
-  //   return (
-  //     <ValueContainer {...props}>
-  //       <Placeholder {...props} isFocused={props.isFocused}>
-  //         {props.selectProps.placeholder}
-  //       </Placeholder>
-  //       {
-  //         React.Children.map(children, child =>
-  //           child && child.type !== Placeholder ? child : null
-  //         )
-  //       }
-  //     </ValueContainer>
-  //   );
-  // };
-
-
-  const style = {
-    // control - remove default border from react-select
-    control: (base: any) => ({
-      ...base,
-      boxShadow: "none"
-    }),
-    // label styles
-    // @ts-ignore
-    container: (provided, state) => ({
-      ...provided,
-      marginTop: 50
-    }),
-    // @ts-ignore
-      valueContainer: (provided, state) => ({
-      ...provided,
-      overflow: "visible"
-    }),
-    // @ts-ignore
-      placeholder: (provided, state) => ({
-      ...provided,
-      position: "absolute",
-      top: state.hasValue || state.selectProps.inputValue ? 5 : "50%",
-      transition: "top 0.1s, font-size 0.1s",
-      fontSize: (state.hasValue || state.selectProps.inputValue) && 13
-    })
+  // Replace default arrow down
+  const DropdownIndicator = (
+    props: IndicatorProps<any>
+  ) => {
+    return (
+      <components.DropdownIndicator {...props}>
+        <GreyArrowDown />
+      </components.DropdownIndicator>
+    );
   };
 
   return (
@@ -122,10 +80,9 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
       value={selectedOption}
       classNamePrefix="coax-form"
       className={classNames.join(" ")}
-      styles={style}
       components={{
         ClearIndicator,
-        // ValueContainer: CustomValueContainer
+        DropdownIndicator
       }}
       textFieldProps={{
         label: 'Label',

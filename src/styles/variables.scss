@@ -85,6 +85,7 @@ $cf-select-multi-container-max-height: 44px;
 
 // active
 $cf-select-border-bottom-active: 2px solid $cf-color-dark-blue;
+$cf-active-select-border: none;
 
 // disabled
 $cf-disabled-select-background: $cf-color-light-gray;
@@ -115,4 +116,5 @@ $cf-checkbox-margins: 0 16px 0 0;
 
 // Checkbox label styles
 $cf-checkbox-label-font-size: 18px;
+$cf-checkbox-label-font-weight: 500;
 $cf-checkbox-label-line-height: 18px;
