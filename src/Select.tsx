@@ -58,6 +58,14 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
     );
   };
 
+  const style = {
+    // control - remove default border from react-select
+    control: (base: any) => ({
+      ...base,
+      boxShadow: "none"
+    }),
+  };
+
 
   // Replace default arrow down
   const DropdownIndicator = (
@@ -74,6 +82,7 @@ const SelectEl = (props: Props & React.Props<HTMLSelectElement>) => {
     <Controller
       name={name}
       as={Select}
+      styles={style}
       options={options}
       onChange={([value]) => value ? value.value : null}
       valueName="zzz"
