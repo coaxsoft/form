@@ -2,10 +2,14 @@ $cf-prefix: "coax-form";
 
 // Colors
 $cf-color-blue: #2456CE;
+$cf-color-dark-blue: #2255CE;
+$cf-color-very-light-blue: #D3DDF5;
 $cf-color-red: #FE1935;
 $cf-color-light-gray: #D2D2D2;
 $cf-color-gray: #8A8A8A;
 $cf-color-silver: #F6F8F9;
+$cf-color-grey-mercury: #e6e6e6;
+$cf-color-grey-nobel: #A2A2A2;
 
 // General elements
 $cf-font-family-formular: Formular, sans-serif;
@@ -31,7 +35,7 @@ $cf-el-height: 36px;
 $cl-wrapper-padding: 10px 0;
 
 
-//Input
+// Input
 $cf-input-border-radius: 2px;
 $cf-input-border-thickness: 2px;
 
@@ -52,3 +56,65 @@ $cf-datepicker-preset-row-color: $cf-datepicker-day-cell-color;
 $cf-datepicker-preset-row-hover-bg: $cf-datepicker-day-cell-hover-bg;
 $cf-datepicker-preset-row-hover-color: #2255CE;
 $cf-datepicker-active-input-border-color: #2255CE;
+
+// Select
+
+// single select
+$cf-select-min-width: 375px;
+$cf-select-max-width: 375px;
+$cf-select-height: 56px;
+$cf-select-border-radius: 2px;
+$cf-select-border-bottom: 2px solid $cf-color-light-gray;
+$cf-select-control-padding: 0 16px;
+$cf-select-drop-down-arrow-padding: 8px 0 8px 17px;
+// menu
+$cf-select-menu-background-color: $cf-color-silver;
+$cf-select-menu-margins: 1px 0 8px 0;
+// menu option
+$cf-select-menu-option-focused: $cf-color-very-light-blue;
+$cf-select-menu-option-selected: $cf-color-dark-blue;
+$cf-select-menu-option-height: 44px;
+$cf-select-menu-option-padding: 12px 16px;
+// multi select
+$cf-select-multi-value-background-color: $cf-color-light-gray;
+$cf-select-multi-value-remove-icon-background-color: $cf-color-grey-nobel;
+$cf-select-multi-container-max-height: 44px;
+
+
+// has value
+
+// active
+$cf-select-border-bottom-active: 2px solid $cf-color-dark-blue;
+$cf-active-select-border: none;
+
+// disabled
+$cf-disabled-select-background: $cf-color-light-gray;
+
+
+// Radio button
+
+// Radio block styles
+$cf-radio-block-margins: 0 45px 10px 0;
+
+// Radio circle styles
+$cf-radio-height: 20px;
+$cf-radio-width: 20px;
+$cf-radio-margins: 0 16px 0 0;
+
+// Radio label styles
+$cf-radio-label-font-size: 18px;
+
+// Checkbox
+
+// Checkbox block styles
+$cf-checkbox-block-margins: 0 45px 10px 0;
+
+// Checkbox circle styles
+$cf-checkbox-height: 20px;
+$cf-checkbox-width: 20px;
+$cf-checkbox-margins: 0 16px 0 0;
+
+// Checkbox label styles
+$cf-checkbox-label-font-size: 18px;
+$cf-checkbox-label-font-weight: 500;
+$cf-checkbox-label-line-height: 18px;

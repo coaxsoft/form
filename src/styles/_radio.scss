@@ -1,12 +1,13 @@
 .#{$cf-prefix} {
   &--radio-wrapper {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &--radio-block {
     display: flex;
     align-items: center;
-    margin-right: 16px;
+    margin: $cf-radio-block-margins;
 
     /* Hide the browser's default radio button */
     input {
@@ -61,13 +62,15 @@
   }
 
   &--radio-el {
-    height: 32px;
+    height: $cf-radio-height;
+    width: $cf-radio-width;
+    margin: $cf-radio-margins;
   }
 
   &--radio-label {
     margin-left: 4px;
     font-family: $cf-font-family-formular;
-    font-size: 18px;
+    font-size: $cf-radio-label-font-size;
   }
 
   /* The coax-form--radio-block */

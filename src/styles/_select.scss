@@ -1,15 +1,107 @@
 .#{$cf-prefix} {
   .#{$cf-prefix} {
+
+    &--select {
+      &:active {
+        border-color: #2456CE;
+      }
+
+      &--clear-icon {
+        padding: 0 8px 0 0;
+        display: flex;
+      }
+    }
+
     &__control {
       width: 100%;
-      height: $cf-el-height;
-      border-radius: $cf-border-radius;
-      border: $cf-border;
+      min-width: $cf-select-min-width;
+      max-width: $cf-select-max-width;
+      height: $cf-select-height;
+      border-radius: $cf-select-border-radius;
+      border: none;
+      border-bottom: $cf-select-border-bottom;
       color: $cf-el-color;
-      background: $cf-el-bg-color;
+      background: $cf-color-silver;
       box-sizing: border-box;
       font-size: $cf-el-font-size;
-      padding: $cf-el-padding;
+      padding: $cf-select-control-padding;
+
+      // styles for disabled select
+      &--is-disabled {
+        background: $cf-disabled-select-background;
+
+        .#{$cf-prefix}__indicator-separator {
+          color: $cf-color-silver;
+        }
+
+        .#{$cf-prefix}__indicator {
+
+          svg {
+            color: $cf-color-silver;
+          }
+        }
+      }
+
+      .#{$cf-prefix}__dropdown-indicator {
+        padding: $cf-select-drop-down-arrow-padding;
+      }
+
+      &--is-focused {
+        border-bottom: $cf-select-border-bottom-active;
+      }
+
+      &:hover {
+        border-bottom: $cf-select-border-bottom-active;
+      }
+    }
+
+    &__menu {
+      margin: $cf-select-menu-margins;
+      background-color: $cf-select-menu-background-color;
+    }
+
+    &__option {
+      height: $cf-select-menu-option-height;
+      display: block;
+      align-items: center;
+      padding: $cf-select-menu-option-padding;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &--is-focused {
+        background-color: $cf-select-menu-option-focused;
+      }
+
+      &--is-selected {
+        background-color: $cf-select-menu-option-selected;
+      }
+    }
+
+    &__value-container {
+      padding: 0;
+
+      &--is-multi {
+        max-height: $cf-select-multi-container-max-height;
+        overflow: scroll;
+      }
+    }
+
+    &__multi-value {
+      background-color: $cf-select-multi-value-background-color;
+
+      &__remove {
+
+        svg {
+          background-color: $cf-select-multi-value-remove-icon-background-color;
+          border-radius: 50%;
+        }
+      }
+
+      &__remove:hover {
+        background-color: transparent;
+        color: $cf-border-color;
+      }
     }
   }
 }

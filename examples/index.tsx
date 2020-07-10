@@ -20,11 +20,56 @@ const App = () => {
 
         <Input name="a" horizontal label="horizontal input"/>
         <Input name="b" label="simple input"/>
-        <Select name="c" label="horizontal select" options={[{ value: 1, label: "form" }]} horizontal/>
+
+        <Radio
+          name="single-radio-btn"
+          values={["Yes"]}
+        />
         <Radio name="gender" values={["male", "female", "other"]}/>
-        <Checkbox name="cakes" label="Cakes"/>
-        <Checkbox name="fruits" label="Fruits"/>
-        <SingleDatePicker name="dob" label="Date of birth" presets={[ { label: "abc", value: new Date() }]}/>
+
+        <Checkbox name="cakes" labelText="Cakes"/>
+        <Checkbox name="fruits" labelText="Fruits"/>
+
+        <SingleDatePicker
+          name="dob"
+          label="Date of birth"
+          presets={[ { label: "abc", value: new Date() }]}
+        />
+
+        <Select
+          name="select"
+          aria-label="horizontal select"
+          options={
+            [
+              {value: 1, label: "nothing but a long text, nothing but a long text, nothing but a long text, nothing but a long text, nothing but a long text "},
+              {value: 2, label: "2"},
+              {value: 3, label: "3"},
+            ]
+          }
+          horizontal
+          isClearable
+        />
+        <Select
+          name="multipleSelect"
+          aria-label="horizontal select"
+          options={
+            [
+              {value: 1, label: "nothing but a long text, nothing but a long text, nothing but a long text, nothing but a long text, nothing but a long text "},
+              {value: 2, label: "2"},
+              {value: 3, label: "3"},
+            ]
+          }
+          horizontal
+          isClearable
+          isMulti
+        />
+        <Select
+          name="disabledSelect"
+          isDisabled={true}
+          aria-label="horizontal select"
+          options={[{value: 1, label: "form"}]}
+          horizontal
+        />
 
         <button type="submit">Submit</button>
       </Form>
