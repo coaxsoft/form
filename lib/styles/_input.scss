@@ -1,0 +1,50 @@
+.#{$cf-prefix} {
+  &--input {
+    border: none;
+    border-bottom: $cf-input-border-thickness $cf-border-style $cf-color-light-gray;
+    border-radius: $cf-input-border-radius;
+    background: $cf-color-silver;
+    outline: none;
+    font-family: $cf-font-family-formular;
+    font-weight: $cf-font-weight-light;
+    font-size: $cf-el-font-size;
+    line-height: 19px;
+    color: $cf-el-color;
+    height: 56px;
+    padding: 23px 15px 0 15px;
+
+    &::placeholder {
+      color: $cf-color-gray;
+    }
+
+    &:focus {
+      border-bottom: $cf-input-border-thickness $cf-border-style $cf-color-blue;
+    }
+
+    &__horizontal {
+      border: $cf-border-thickness $cf-border-style $cf-color-light-gray;
+      border-radius: $cf-input-border-radius;
+      font-weight: $cf-font-weight-light;
+      background: $cf-color-silver;
+      height: auto;
+      padding: 5px;
+      background: $cf-el-bg-color;
+      outline: none;
+      &::placeholder {
+        color: $cf-color-gray;
+      }
+
+      &:focus {
+        border: $cf-border-thickness $cf-border-style $cf-color-blue;
+      }
+    }
+  }
+
+  .input__error {
+    border-bottom: $cf-input-border-thickness $cf-border-style $cf-color-red;
+  }
+
+  .input-horizontal__error {
+    border: $cf-border-thickness $cf-border-style $cf-color-red;
+  }
+}
